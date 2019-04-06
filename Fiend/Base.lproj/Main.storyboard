@@ -38,12 +38,48 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HC7-ej-TCm">
+                                <rect key="frame" x="16" y="99" width="94" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="ArrayButton 1"/>
+                                <connections>
+                                    <action selector="clickArrayButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="mG1-Fu-a0J"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B5k-nH-nTm">
+                                <rect key="frame" x="264" y="99" width="96" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="ArrayButton 2"/>
+                                <connections>
+                                    <action selector="clickArrayButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="raB-Yw-xbG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UoQ-qP-y8N">
+                                <rect key="frame" x="15" y="137" width="96" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="ArrayButton 3"/>
+                                <connections>
+                                    <action selector="clickArrayButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="c6O-25-Ehg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5iG-Ao-eQz">
+                                <rect key="frame" x="264" y="137" width="96" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="ArrayButton 4"/>
+                                <connections>
+                                    <action selector="clickArrayButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="UYU-dG-iGp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                     </view>
                     <connections>
                         <outlet property="incrementorLabel" destination="hPf-wq-ICe" id="zIe-j6-WsQ"/>
+                        <outletCollection property="arrayInputButtons" destination="HC7-ej-TCm" collectionClass="NSMutableArray" id="EPJ-4c-9qH"/>
+                        <outletCollection property="arrayInputButtons" destination="B5k-nH-nTm" collectionClass="NSMutableArray" id="Ed0-Te-58K"/>
+                        <outletCollection property="arrayInputButtons" destination="5iG-Ao-eQz" collectionClass="NSMutableArray" id="L6M-9J-tFc"/>
+                        <outletCollection property="arrayInputButtons" destination="UoQ-qP-y8N" collectionClass="NSMutableArray" id="yF7-bZ-q8J"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>

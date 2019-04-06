@@ -27,14 +27,31 @@ class GameViewController: UIViewController {
     // Outlet Collection
     // Alt Syntax @IBOutlet var inputFields: Array<UIButton>!
     
+    @IBOutlet var arrayInputButtons: [UIButton]!
+    
+    
     @IBOutlet weak var incrementorLabel: UILabel!
     
     @IBAction func startButton(_ sender: UIButton) {
-        print("clicked")
         startGame(withText: "Start", on: sender)
         incrementor += 1
     }
 
+    @IBAction func clickArrayButton(_ sender: UIButton) {
+        let buttonIndex = arrayInputButtons.firstIndex(of: sender)!
+        
+        // You can also do the following to catch if the optional is nil
+//        if let buttonIndex = arrayInputButtons.firstIndex(of: sender) {
+//            
+//        } else {
+//            
+//        }
+        
+        print("button index: \(buttonIndex)")
+        
+        
+    }
+    
     // Each param has two names, the external (withText) and the internal (text)
     // Params should be declared like you're reading english (withText)
     func startGame(withText text: String, on button: UIButton) {
