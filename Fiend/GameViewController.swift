@@ -11,40 +11,38 @@ import SpriteKit
 import GameplayKit
 
 class GameViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        if let view = self.view as! SKView? {
-            // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "GameScene") {
-                // Set the scale mode to scale to fit the window
-                scene.scaleMode = .aspectFill
-                
-                // Present the scene
-                view.presentScene(scene)
-            }
-            
-            view.ignoresSiblingOrder = true
-            
-            view.showsFPS = true
-            view.showsNodeCount = true
+    
+    
+    // Has to be either initialized with init() or assignment, like below
+    var myClassVar: Int = 0
+    
+    // Swift has inference, so Swift will know that the following var is an int
+    // didSet is a callback and will be called every time the variable is set.
+    var incrementor = 0 {
+        didSet {
+            incrementorLabel.text = "Incremented \(incrementor) times"
         }
     }
-
-    override var shouldAutorotate: Bool {
-        return true
+    
+    // Outlet Collection
+    // Alt Syntax @IBOutlet var inputFields: Array<UIButton>!
+    
+    @IBOutlet weak var incrementorLabel: UILabel!
+    
+    @IBAction func startButton(_ sender: UIButton) {
+        print("clicked")
+        startGame(withText: "Start", on: sender)
+        incrementor += 1
     }
 
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            return .allButUpsideDown
-        } else {
-            return .all
+    // Each param has two names, the external (withText) and the internal (text)
+    // Params should be declared like you're reading english (withText)
+    func startGame(withText text: String, on button: UIButton) {
+        if button.currentTitle == "Start" {
+            button.setTitle("Here we go...", for: UIControl.State.normal)
+            // When you start typing “color” use the color literal, then you get
+            // a color picker for the background color.
+            button.backgroundColor = #colorLiteral(red: 0.2445866466, green: 0.8175527453, blue: 0.4396009147, alpha: 1)
         }
-    }
-
-    override var prefersStatusBarHidden: Bool {
-        return true
     }
 }
